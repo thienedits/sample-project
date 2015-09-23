@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+        .ng-hide { display: none!important; }
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+          display: none !important;
+        }
+    </style>
+    <title ng-bind="title">usta</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <base href="/">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- build:css styles/lib.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="/bower_components/toastr/toastr.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/app.css -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/.tmp/styles.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+</head>
+<body layout="row" class="layout layout-row" ng-controller="SidebarController as vm">
+  
+    <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" layout="column">
+      <md-toolbar class="">
+        <md-list-item ng-show="vm.signedIn" ng-cloak>
+          <img alt="{{vm.user.profile.username}}" ng-src="{{vm.user.profile.profileImageURL}}" class="md-avatar md-64">
+          <p class="" ng-cloak>{{vm.user.profile.username}}</p> 
+        </md-list-item>
+      </md-toolbar>
+      <md-list ng-cloak>
+        <md-list-item ng-repeat="r in vm.navRoutes">
+          <md-button class="button-sidenav" ng-class="vm.isSelected(r)" ng-click="vm.sideNavClick(r)">
+          <md-icon>assessment</md-icon>
+            {{r.name | capitalize}}
+          </md-button>
+        </md-list-item>
+      </md-list>
+      <hr>
+      <md-list ng-cloak>
+        <md-list-item ng-show="vm.signedIn">
+          <md-button ng-click="vm.logout()" class="button-sidenav">Logout</md-button>
+        </md-list-item>
+      </md-list>
+    </md-sidenav>
+
+  <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+
+    <md-toolbar id="main-toolbar" ng-show="vm.showToolbar" layout="row" class="md-whiteframe-glow-z1 site-content-toolbar md-default-theme">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" hide-gt-sm ng-click="vm.toggleList()" aria-label="Show User List">
+          <md-icon class="" >menu</md-icon>
+        </md-button>
+        <h2>USTA</h2>
+        <span flex></span>
+        <md-button ng-click="vm.importMatches()" ng-cloak class="md-icon-button md-accent" aria-label="refresh">
+          <md-tooltip>
+            Update Matches
+          </md-tooltip>
+          <md-icon style="width: 24px; height: 24px;">refresh</md-icon>
+        </md-button>
+        
+      </div>
+    </md-toolbar>
+
+    <md-content layout-sm="column" flex id="content">
+      <div class="ui-view-container" layout-sm="column" flex>
+        <div ui-view layout-sm="column" flex></div>  
+      </div>
+    </md-content>
+
+  </div>
+    <div>
+        <!-- <div ng-include="'app/layout/shell.html'"></div> -->
+        <div id="splash-page" ng-show="showSplash">
+            <div class="page-splash">
+                <div class="page-splash-message">
+                    usta
+                </div>
+                <div class="progress progress-striped active page-progress-bar">
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- build:js js/lib.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/bower_components/angular-material/angular-material.js"></script>
+    <script src="/bower_components/angular-messages/angular-messages.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/bower_components/angular-smart-table/dist/smart-table.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/firebase/firebase.js"></script>
+    <script src="/bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="/bower_components/extras.angular.plus/ngplus-overlay.js"></script>
+    <script src="/bower_components/moment/moment.js"></script>
+    <script src="/bower_components/toastr/toastr.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js js/app.js -->
+    <!-- inject:js -->
+    <script src="/src/client/app/app.module.js"></script>
+    <script src="/src/client/app/admin/admin.module.js"></script>
+    <script src="/src/client/app/blocks/exception/exception.module.js"></script>
+    <script src="/src/client/app/blocks/logger/logger.module.js"></script>
+    <script src="/src/client/app/blocks/router/router.module.js"></script>
+    <script src="/src/client/app/core/core.module.js"></script>
+    <script src="/src/client/app/dashboard/dashboard.module.js"></script>
+    <script src="/src/client/app/home/home.module.js"></script>
+    <script src="/src/client/app/layout/layout.module.js"></script>
+    <script src="/src/client/app/register/register.module.js"></script>
+    <script src="/src/client/app/widgets/widgets.module.js"></script>
+    <script src="/src/client/app/admin/admin.controller.js"></script>
+    <script src="/src/client/app/admin/admin.route.js"></script>
+    <script src="/src/client/app/blocks/exception/exception-handler.provider.js"></script>
+    <script src="/src/client/app/blocks/exception/exception.js"></script>
+    <script src="/src/client/app/blocks/logger/logger.js"></script>
+    <script src="/src/client/app/blocks/router/router-helper.provider.js"></script>
+    <script src="/src/client/app/core/Analytics/analyticsFactory.js"></script>
+    <script src="/src/client/app/core/config.js"></script>
+    <script src="/src/client/app/core/constants.js"></script>
+    <script src="/src/client/app/core/core.filters.js"></script>
+    <script src="/src/client/app/core/core.route.js"></script>
+    <script src="/src/client/app/core/dataservice.js"></script>
+    <script src="/src/client/app/core/SimpleLogin/authFactory.js"></script>
+    <script src="/src/client/app/dashboard/dashboard.controller.js"></script>
+    <script src="/src/client/app/dashboard/dashboard.route.js"></script>
+    <script src="/src/client/app/home/home.controller.js"></script>
+    <script src="/src/client/app/home/home.route.js"></script>
+    <script src="/src/client/app/layout/ht-sidebar.directive.js"></script>
+    <script src="/src/client/app/layout/ht-top-nav.directive.js"></script>
+    <script src="/src/client/app/layout/shell.controller.js"></script>
+    <script src="/src/client/app/layout/sidebar.controller.js"></script>
+    <script src="/src/client/app/register/register.controller.js"></script>
+    <script src="/src/client/app/register/register.route.js"></script>
+    <script src="/src/client/app/widgets/ht-img-person.directive.js"></script>
+    <script src="/src/client/app/widgets/ht-widget-header.directive.js"></script>
+    <!-- endinject -->
+
+    <!-- inject:templates:js -->
+    <!-- endinject -->
+    <!-- endbuild -->
+</body>
+</html>

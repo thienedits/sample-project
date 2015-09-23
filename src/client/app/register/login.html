@@ -1,0 +1,30 @@
+<md-toolbar layout="row" class="site-content-toolbar md-default-theme">
+  <div class="md-toolbar-tools">
+    <md-button ng-href="/" class="md-icon-button" aria-label="Go Back Home">
+      <md-icon class="" >arrow_back</md-icon>
+    </md-button>
+  </div>
+</md-toolbar>
+<form name="loginForm" class="l-pad-2" layout="column" flex>
+  <div flex layout="column" layout-align="center">
+    <md-icon md-svg-icon="tennis-ball" class="md-accent md-48" aria-label="Tennis Ball Logo"></md-icon>
+    <md-input-container class="md-accent">
+      <label>Email</label>
+      <input ng-model="vm.user.email" type="email">
+    </md-input-container>
+    <md-input-container class="md-accent">
+      <label>Password</label>
+      <input ng-model="vm.user.password" type="password">
+    </md-input-container>
+  </div>
+  <div style="height:200px;" layout="column" layout-align="center">
+    <md-button ng-click="vm.login()" class="md-raised md-accent">Log In</md-button>
+    <span class="text-center l-space-top-2">Sign in with</span>
+    <span class="text-center">
+      <md-button ng-click="vm.facebookLogin()" class="md-accent">Facebook</md-button>
+      <md-button ng-click="vm.googleLogin()" class="md-accent">Google</md-button>
+    </span>
+  </div>
+
+
+</form>

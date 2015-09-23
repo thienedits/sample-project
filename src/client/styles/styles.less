@@ -1,0 +1,844 @@
+/* Sidenav area */
+
+md-list .md-button {
+    font-weight: 500;
+    text-align: left;
+    width: 100%;
+}
+
+md-list .md-button.selected {
+    background-color: rgba(158, 158, 158, 0.2);
+}
+
+.site-sidenav {
+    background: #fff;
+    color: rgba(0,0,0,.87);
+
+    md-list-item, md-list-item .md-list-item-inner {
+      min-height: 48px;
+    }
+
+    md-toolbar {
+      height: 172px;
+    }
+}
+
+.button-sidenav {
+  border-radius: 0;
+  padding: 0 16px;
+  margin: 0;
+  text-transform: none;
+
+  md-icon {
+    margin-right: 32px;
+  }
+}
+
+md-toolbar .md-button md-icon {
+    color: #fff !important;
+}
+
+.md-whiteframe-glow-z1 {
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 0px 2px 2px rgba(0, 0, 0, 0.098), 0px 0px 5px 1px rgba(0, 0, 0, 0.084);
+}
+
+md-list-item p {
+    font-size: 16px;
+}
+
+.round {
+  border-radius: 4px;
+}
+
+.round-top {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.md-toolbar-tools > .md-button:first-child {
+    margin-left: -16px;
+    margin-right: 24px;
+}
+
+.md-48 {
+    font-size: 48px !important;
+    height: 48px !important;
+    width: 48px !important;
+}
+
+.md-64 {
+    font-size: 64px !important;
+    height: 64px !important;
+    width: 64px !important;
+}
+
+hr {
+  color: rgba(0,0,0,0.12);
+  background-color: rgba(0,0,0,0.12);
+  width: 100%;
+  border:none;
+  height: 1px;
+}
+
+/* Have to set height explicity on ui-view 
+to prevent collapsing during animation*/
+[ui-view]{
+ height: 100%; 
+}
+
+.ui-view-container {
+  position: relative;
+}
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+  position: absolute;
+  left: 0;
+  right: 0;
+  -webkit-transition:all .3s ease-in-out;
+    -moz-transition:all .3s ease-in-out;
+    -o-transition:all .3s ease-in-out;
+    transition:all .3s ease-in-out;
+}
+
+[ui-view].ng-enter {
+  opacity: 0;
+  -webkit-transform:translate3d(0, 100px, 0);
+  -moz-transform:translate3d(0, 100px, 0);
+  transform:translate3d(0, 100px, 0);
+}
+
+[ui-view].ng-enter-active {
+  opacity: 1;
+  -webkit-transform:translate3d(0, 0, 0);
+  -moz-transform:translate3d(0, 0, 0);
+  transform:translate3d(0, 0, 0);
+}
+
+[ui-view].ng-leave {
+  opacity: 1; 
+  -webkit-transform:translate3d(0, 0, 0);
+  -moz-transform:translate3d(0, 0, 0);
+  transform:translate3d(0, 0, 0);
+}
+
+[ui-view].ng-leave-active {
+  opacity: 0;
+  -webkit-transform:translate3d(0, 100px, 0);
+  -moz-transform:translate3d(0, 100px, 0);
+  transform:translate3d(0, 100px, 0);
+}
+
+#main-toolbar {
+  -webkit-transform:translate3d(0, 0, 0);
+  -moz-transform:translate3d(0, 0, 0);
+  transform:translate3d(0, 0, 0);
+}
+
+#main-toolbar.ng-hide-add, #main-toolbar.ng-hide-remove {
+  display:block!important;
+  -webkit-transition:all .5s ease-in-out;
+    -moz-transition:all .5s ease-in-out;
+    -o-transition:all .5s ease-in-out;
+    transition:all .5s ease-in-out;
+}
+
+#main-toolbar.ng-hide {
+  opacity: 1;
+  -webkit-transform:translate3d(0, -100px, 0);
+  -moz-transform:translate3d(0, -100px, 0);
+  transform:translate3d(0, -100px, 0);
+}
+
+
+#home, [name=loginForm], [name=registerForm] {
+  background-color: rgb(0,188,212);
+  color: rgb(255,255,255);
+}
+
+#home .sign-in {
+  background-color: #00838F;
+}
+
+[name=loginForm] label, [name=registerForm] label {
+  color: rgb(255,255,255);
+}
+
+/* ==========================================================================
+  MEGA TABLE
+   ========================================================================== */
+/* line 5, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+.mega-table-wrapper {
+  margin-bottom: 20px;
+  padding: 0px 15px; }
+  /* line 33, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+  .module-header + .mega-table-wrapper {
+    border-top: none; }
+
+/* line 38, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+.mega-table {
+  width: 100%; }
+  /* line 41, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+  .mega-table .wl-dash-center {
+    display: table;
+    table-layout: fixed;
+    width: 100%; }
+    /* line 45, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+    .mega-table .wl-dash-center span {
+      display: table-cell; }
+      /* line 47, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+      .mega-table .wl-dash-center span:first-child {
+        text-align: right; }
+      /* line 50, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+      .mega-table .wl-dash-center span:nth-child(2) {
+        text-align: center; }
+      /* line 53, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+      .mega-table .wl-dash-center span:nth-child(3) {
+        text-align: left; }
+  /* line 58, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+  .mega-table .wl-decimal-right {
+    text-align: right !important; }
+  /* line 62, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+  .mega-table.rank-detail-mega-table td:first-child {
+    text-align: left; }
+  /* line 66, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+  .player-rank-breakdown-container .mega-table {
+    margin-top: 30px; }
+    /* line 68, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+    .player-rank-breakdown-container .mega-table th:nth-child(2) {
+      padding: 0px; }
+      /* line 70, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+      .player-rank-breakdown-container .mega-table th:nth-child(2) .mobile-select-wrapper {
+        padding: 15px 0px; }
+    /* line 74, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+    .player-rank-breakdown-container .mega-table td:last-child {
+      width: 130px; }
+  /* line 79, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+  .mega-table.past-number-ones-mega-table th {
+    border-top: none;
+    padding: 0px; }
+    /* line 82, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+    .mega-table.past-number-ones-mega-table th .mobile-select-wrapper {
+      padding: 15px 0px; }
+  /* line 87, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+  .mega-table.past-number-ones-mega-table td:nth-child(2) {
+    text-align: left; }
+  /* line 90, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+  .mega-table.past-number-ones-mega-table td:nth-child(3) {
+    text-align: right; }
+  /* line 96, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+  .mega-table tr:nth-child(2n+1) td {
+    background-color: #f8f8f8; }
+  /* line 101, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+  .mega-table td, .mega-table th {
+    border-bottom: 1px solid #ececec;
+    color: #1f2223;
+    vertical-align: middle; }
+  /* line 111, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+  .mega-table th {
+    border-top: 1px solid #ececec;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    font-size: 12px; }
+    /* line 120, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+    .mega-table th:first-child {
+      padding-left: 0px;
+      text-align: left; }
+  /* line 129, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+  .mega-table td {
+    border-left: 1px solid #ececec;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+    padding: 5px; }
+    /* line 139, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+    .mega-table td:first-child {
+      border-left: none;
+      color: #1f2223; }
+    /* line 145, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+    .mega-table td:last-child, .mega-table td.player-cell, .rank-detail-mega-table .mega-table td {
+      text-align: left; }
+    /* line 148, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+    .mega-table td.fifty-two-week-win-loss-cell {
+      text-align: center; }
+  /* line 157, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+  .mega-table .mega-player-flag {
+    display: block;
+    float: left;
+    height: 25px;
+    margin-right: 20px; }
+    /* line 162, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+    .mega-table .mega-player-flag img {
+      border: 1px solid #ececec;
+      display: block;
+      height: 100%;
+      margin-top: -1px;
+      width: auto; }
+  /* line 170, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+  .mega-table .mega-player-name {
+    display: block;
+    float: left;
+    font-family: 'roboto_condensedbold';
+    line-height: 25px; }
+  /* line 177, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+  .mega-table .day-table-name .mega-player-name {
+    float: none;
+    text-align: left; }
+  /* line 182, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+  .mega-table .rank-cell {
+    color: #000; }
+  /* line 186, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+  .mega-table .tourney-result .tourney-location {
+    display: block; }
+  /* line 189, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_mega-table.scss */
+  .mega-table .tourney-result .tourney-dates {
+    display: block; }
+
+/* ==========================================================================
+  ACTIVITY TOURNAMENT TABLE
+   ========================================================================== */
+/* line 5, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_activity-tournament-table.scss */
+.activity-tournament-table {
+  border-top: 1px solid #ececec;}
+  /* line 12, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_activity-tournament-table.scss */
+  .activity-tournament-table .tourney-results-wrapper {
+    padding: 0px; }
+  /* line 16, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_activity-tournament-table.scss */
+  .activity-tournament-table .tourney-badge-wrapper {
+    padding-right: 10px; }
+  /* line 20, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_activity-tournament-table.scss */
+  .activity-tournament-table .tourney-badge img {
+    height: 35px;
+    width: auto; }
+  /* line 25, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_activity-tournament-table.scss */
+  .activity-tournament-table .title-content {
+    color: #1f2223;
+    font-family: 'roboto_condensedregular';
+    font-size: 13px;
+    line-height: 17px; }
+  /* line 31, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_activity-tournament-table.scss */
+  .activity-tournament-table .tourney-title {
+    font-family: 'roboto_condensedbold'; }
+    /* line 33, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_activity-tournament-table.scss */
+    .activity-tournament-table .tourney-title:after {
+      content: " "; }
+  /* line 37, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_activity-tournament-table.scss */
+  .activity-tournament-table .tourney-location {
+    display: block; }
+    /* line 39, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_activity-tournament-table.scss */
+    .activity-tournament-table .tourney-location:after {
+      content: " "; }
+  /* line 43, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_activity-tournament-table.scss */
+  .activity-tournament-table .tourney-dates {
+    display: block; }
+  /* line 49, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_activity-tournament-table.scss */
+  .activity-tournament-table .mega-table .mega-player-name, .activity-tournament-table .mega-table .mega-player-score {
+    display: block;
+    float: none;
+    font-family: 'roboto_condensedregular';
+    line-height: 18px;
+    text-align: left; }
+  /* line 70, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_activity-tournament-table.scss */
+  .activity-tournament-table .mega-table th {
+    color: #1f2223;
+    background-color: #f1f1f1;
+    border-left: 1px solid #ececec;
+    text-align: center; }
+    /* line 78, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_activity-tournament-table.scss */
+    .activity-tournament-table .mega-table th:first-child {
+      border-left: none;
+      padding-left: 15px; }
+    /* line 82, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_activity-tournament-table.scss */
+    .activity-tournament-table .mega-table th:nth-child(3) {
+      text-align: left; }
+  /* line 87, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_activity-tournament-table.scss */
+  .activity-tournament-table .mega-table td {
+    background-color: #fff !important;
+    color: #1f2223; }
+    /* line 88, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_activity-tournament-table.scss */
+    .activity-tournament-table .mega-table td:nth-child(2) {
+      color: rgb(0,188,212); }
+    /* line 99, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_activity-tournament-table.scss */
+    .activity-tournament-table .mega-table td:last-child {
+      text-align: center; }
+  /* line 105, C:/Projects/atp-world-tour/FED/assets/sass/modules/table/_activity-tournament-table.scss */
+  .activity-tournament-table .tourney-result td {
+    border-color: #e8e8e8;
+    vertical-align: middle;
+    padding-bottom: 15px !important;
+    padding-top: 0px !important; }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+//Bootstrap text alignment
+.text-left {
+    text-align: left
+}
+
+.text-right {
+    text-align: right
+}
+
+.text-center {
+    text-align: center
+}
+
+.text-justify {
+    text-align: justify
+}
+
+.text-nowrap {
+    white-space: nowrap
+}
+
+.text-lowercase {
+    text-transform: lowercase
+}
+
+.text-uppercase {
+    text-transform: uppercase
+}
+
+.text-capitalize {
+    text-transform: capitalize
+}
+
+
+//Margin and Padding
+.l-space-0 {
+    margin: 0
+}
+
+.l-space-top-0 {
+    margin-top: 0
+}
+
+.l-space-bottom-0 {
+    margin-bottom: 0
+}
+
+.l-space-left-0 {
+    margin-left: 0
+}
+
+.l-space-right-0 {
+    margin-right: 0
+}
+
+.l-pad-0 {
+    padding: 0
+}
+
+.l-pad-top-0 {
+    padding-top: 0
+}
+
+.l-pad-bottom-0 {
+    padding-bottom: 0
+}
+
+.l-pad-left-0 {
+    padding-left: 0
+}
+
+.l-pad-right-0 {
+    padding-right: 0
+}
+
+.l-space-1 {
+    margin: 8px
+}
+
+.l-space-top-1 {
+    margin-top: 8px
+}
+
+.l-space-bottom-1 {
+    margin-bottom: 8px
+}
+
+.l-space-left-1 {
+    margin-left: 8px
+}
+
+.l-space-right-1 {
+    margin-right: 8px
+}
+
+.l-pad-1 {
+    padding: 8px
+}
+
+.l-pad-top-1 {
+    padding-top: 8px
+}
+
+.l-pad-bottom-1 {
+    padding-bottom: 8px
+}
+
+.l-pad-left-1 {
+    padding-left: 8px
+}
+
+.l-pad-right-1 {
+    padding-right: 8px
+}
+
+.l-space-2 {
+    margin: 16px
+}
+
+.l-space-top-2 {
+    margin-top: 16px
+}
+
+.l-space-bottom-2 {
+    margin-bottom: 16px
+}
+
+.l-space-left-2 {
+    margin-left: 16px
+}
+
+.l-space-right-2 {
+    margin-right: 16px
+}
+
+.l-pad-2 {
+    padding: 16px
+}
+
+.l-pad-top-2 {
+    padding-top: 16px
+}
+
+.l-pad-bottom-2 {
+    padding-bottom: 16px
+}
+
+.l-pad-left-2 {
+    padding-left: 16px
+}
+
+.l-pad-right-2 {
+    padding-right: 16px
+}
+
+.l-space-3 {
+    margin: 24px
+}
+
+.l-space-top-3 {
+    margin-top: 24px
+}
+
+.l-space-bottom-3 {
+    margin-bottom: 24px
+}
+
+.l-space-left-3 {
+    margin-left: 24px
+}
+
+.l-space-right-3 {
+    margin-right: 24px
+}
+
+.l-pad-3 {
+    padding: 24px
+}
+
+.l-pad-top-3 {
+    padding-top: 24px
+}
+
+.l-pad-bottom-3 {
+    padding-bottom: 24px
+}
+
+.l-pad-left-3 {
+    padding-left: 24px
+}
+
+.l-pad-right-3 {
+    padding-right: 24px
+}
+
+.l-space-4 {
+    margin: 32px
+}
+
+.l-space-top-4 {
+    margin-top: 32px
+}
+
+.l-space-bottom-4 {
+    margin-bottom: 32px
+}
+
+.l-space-left-4 {
+    margin-left: 32px
+}
+
+.l-space-right-4 {
+    margin-right: 32px
+}
+
+.l-pad-4 {
+    padding: 32px
+}
+
+.l-pad-top-4 {
+    padding-top: 32px
+}
+
+.l-pad-bottom-4 {
+    padding-bottom: 32px
+}
+
+.l-pad-left-4 {
+    padding-left: 32px
+}
+
+.l-pad-right-4 {
+    padding-right: 32px
+}
+
+.l-space-5 {
+    margin: 40px
+}
+
+.l-space-top-5 {
+    margin-top: 40px
+}
+
+.l-space-bottom-5 {
+    margin-bottom: 40px
+}
+
+.l-space-left-5 {
+    margin-left: 40px
+}
+
+.l-space-right-5 {
+    margin-right: 40px
+}
+
+.l-pad-5 {
+    padding: 40px
+}
+
+.l-pad-top-5 {
+    padding-top: 40px
+}
+
+.l-pad-bottom-5 {
+    padding-bottom: 40px
+}
+
+.l-pad-left-5 {
+    padding-left: 40px
+}
+
+.l-pad-right-5 {
+    padding-right: 40px
+}
+
+.l-space-6 {
+    margin: 48px
+}
+
+.l-space-top-6 {
+    margin-top: 48px
+}
+
+.l-space-bottom-6 {
+    margin-bottom: 48px
+}
+
+.l-space-left-6 {
+    margin-left: 48px
+}
+
+.l-space-right-6 {
+    margin-right: 48px
+}
+
+.l-pad-6 {
+    padding: 48px
+}
+
+.l-pad-top-6 {
+    padding-top: 48px
+}
+
+.l-pad-bottom-6 {
+    padding-bottom: 48px
+}
+
+.l-pad-left-6 {
+    padding-left: 48px
+}
+
+.l-pad-right-6 {
+    padding-right: 48px
+}
+
+.l-space-7 {
+    margin: 56px
+}
+
+.l-space-top-7 {
+    margin-top: 56px
+}
+
+.l-space-bottom-7 {
+    margin-bottom: 56px
+}
+
+.l-space-left-7 {
+    margin-left: 56px
+}
+
+.l-space-right-7 {
+    margin-right: 56px
+}
+
+.l-pad-7 {
+    padding: 56px
+}
+
+.l-pad-top-7 {
+    padding-top: 56px
+}
+
+.l-pad-bottom-7 {
+    padding-bottom: 56px
+}
+
+.l-pad-left-7 {
+    padding-left: 56px
+}
+
+.l-pad-right-7 {
+    padding-right: 56px
+}
+
+.l-space-8 {
+    margin: 64px
+}
+
+.l-space-top-8 {
+    margin-top: 64px
+}
+
+.l-space-bottom-8 {
+    margin-bottom: 64px
+}
+
+.l-space-left-8 {
+    margin-left: 64px
+}
+
+.l-space-right-8 {
+    margin-right: 64px
+}
+
+.l-pad-8 {
+    padding: 64px
+}
+
+.l-pad-top-8 {
+    padding-top: 64px
+}
+
+.l-pad-bottom-8 {
+    padding-bottom: 64px
+}
+
+.l-pad-left-8 {
+    padding-left: 64px
+}
+
+.l-pad-right-8 {
+    padding-right: 64px
+}
+
+.l-space-9 {
+    margin: 72px
+}
+
+.l-space-top-9 {
+    margin-top: 72px
+}
+
+.l-space-bottom-9 {
+    margin-bottom: 72px
+}
+
+.l-space-left-9 {
+    margin-left: 72px
+}
+
+.l-space-right-9 {
+    margin-right: 72px
+}
+
+.l-pad-9 {
+    padding: 72px
+}
+
+.l-pad-top-9 {
+    padding-top: 72px
+}
+
+.l-pad-bottom-9 {
+    padding-bottom: 72px
+}
+
+.l-pad-left-9 {
+    padding-left: 72px
+}
+
+.l-pad-right-9 {
+    padding-right: 72px
+}
+
+.l-space-10 {
+    margin: 80px
+}
+
+.l-space-top-10 {
+    margin-top: 80px
+}
+
+.l-space-bottom-10 {
+    margin-bottom: 80px
+}
+
+.l-space-left-10 {
+    margin-left: 80px
+}
+
+.l-space-right-10 {
+    margin-right: 80px
+}
+
+.l-pad-10 {
+    padding: 80px
+}
+
+.l-pad-top-10 {
+    padding-top: 80px
+}
+
+.l-pad-bottom-10 {
+    padding-bottom: 80px
+}
+
+.l-pad-left-10 {
+    padding-left: 80px
+}

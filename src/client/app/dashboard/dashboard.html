@@ -1,0 +1,27 @@
+<div layout="column" class="activity-tournament-table">
+  <div class="heading l-space-left-2">
+    <h3>{{vm.user.profile.username}}</h3>
+    <h5 class="">Win Loss: {{vm.wins}}-{{vm.losses}}</h5>
+  </div>
+
+  <table st-table="vm.matches" class="mega-table ">
+    <thead>
+    <tr>
+      <th>Date</th>
+      <th>Opponent</th>
+      <th>W&#8209;L</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="match in vm.matches">
+      <td>{{match.matchDate  | date:'MM.dd.yyyy'}}</td>
+      <td>
+        {{ match.opponent }}<br>
+        {{match.score}}
+      </td>
+      <td>{{ match.winloss }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

@@ -1,0 +1,40 @@
+<md-toolbar layout="row" class="site-content-toolbar md-default-theme">
+  <div class="md-toolbar-tools">
+    <md-button ng-href="/" class="md-icon-button" aria-label="Go Back Home">
+      <md-icon class="" >arrow_back</md-icon>
+    </md-button>
+  </div>
+</md-toolbar>
+<form name="registerForm" class="l-pad-2" layout="column" flex>
+  <md-icon md-svg-icon="tennis-ball" class="md-accent md-48" aria-label="Tennis Ball Logo"></md-icon>
+  <md-input-container class="md-accent">
+    <label>Full Name</label>
+    <input md-maxlength="30" required name="fullName" ng-model="vm.user.name">
+    <div ng-messages="registerForm.fullName.$error">
+      <div ng-message="required">This is required.</div>
+      <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+    </div>
+  </md-input-container>
+  <md-input-container class="md-accent">
+    <label>USTA Member #</label>
+    <input required type="number" step="any" name="ustaNumber" ng-model="vm.user.ustaNumber">
+    <div ng-messages="registerForm.ustaNumber.$error">
+      <div ng-message="required">This is required.</div>
+    </div>
+  </md-input-container>
+  <md-input-container class="md-accent">
+    <label>Email</label>
+    <input required type="email" name="email" ng-model="vm.user.email">
+    <div ng-messages="registerForm.email.$error">
+      <div ng-message="required">This is required.</div>
+    </div>
+  </md-input-container>
+  <md-input-container class="md-accent">
+    <label>Password</label>
+    <input required name="password" ng-model="vm.user.password">
+    <div ng-messages="registerForm.password.$error">
+      <div ng-message="required">This is required.</div>
+    </div>
+  </md-input-container>
+  <md-button ng-click="vm.register()" class="md-raised md-accent">Register</md-button>
+</form>
